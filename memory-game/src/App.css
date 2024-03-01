@@ -1,8 +1,12 @@
+#root{
+  width:100%;
+  max-width: 1280px;
+}
+
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
+  
+ 
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 }
 
@@ -17,7 +21,7 @@
 }
 
 /* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
+.flip-card.active .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -34,13 +38,18 @@
 .flip-card-front {
   background-color: #bbb;
   color: black;
+  border-radius: 4px;
 }
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: rgb(18, 20, 23);
   color: white;
   transform: rotateY(180deg);
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  border-radius: 4px;
 }
 
 .main{
@@ -49,4 +58,13 @@
   flex-direction:column;
   align-items: center;
   justify-content:center;
+}
+
+.container{
+
+  display:grid;
+  grid-template-columns: repeat(3,150px);
+  grid-auto-rows:150px;
+  gap:10px;
+
 }
